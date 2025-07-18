@@ -1,0 +1,28 @@
+<header class="navbar navbar-fixed-top navbar-inverse">
+  <div class="container">
+    <%= link_to t("navigation.sample_app"), root_path, id: "logo" %>
+    <nav>
+      <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to t("navigation.home"), root_path %></li>
+        <li><%= link_to t("navigation.help"), static_pages_help_path %></li>
+        <li><%= link_to t("navigation.contact"), static_pages_contact_path %></li>
+        <li><%= link_to t("navigation.microposts"), microposts_path %></li>
+        <li><%= link_to t("navigation.log_in"), "#" %></li>
+        <li class="language-switcher">
+          <a href="#" class="language-toggle">
+            <%= I18n.locale.to_s.upcase %> <span class="caret"></span>
+          </a>
+          <%# 
+            Hàm url_for dùng để sinh ra URL dựa trên các tham số truyền vào.
+            Trong trường hợp này, url_for(locale: :vi) sẽ tạo ra URL hiện tại nhưng thay đổi tham số locale thành :vi.
+            Điều này giúp chuyển đổi ngôn ngữ mà vẫn giữ nguyên trang hiện tại.
+          %>
+          <ul class="language-menu">
+            <li><%= link_to t("locales.vi"), url_for(locale: :vi) %></li>
+            <li><%= link_to t("locales.en"), url_for(locale: :en) %></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</header>

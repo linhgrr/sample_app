@@ -4,7 +4,10 @@ app:
   description: "A sample Ruby on Rails tutorial application"
   author: "Rails Tutorial"
   default_user_name: "User"
-  
+user:
+  max_name_length: 50
+  max_email_length: 255
+  birthday_valid_years: 100
 i18n:
   default_locale: "vi"
   available_locales: ["vi", "en"]

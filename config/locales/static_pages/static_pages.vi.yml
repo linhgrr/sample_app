@@ -1,16 +1,4 @@
 vi:
-  hello: "Xin chào thế giới"
-  
-  base_title: "Ứng dụng mẫu Ruby on Rails Tutorial"
-  
-  navigation:
-    home: "Trang chủ"
-    help: "Trợ giúp"
-    contact: "Liên hệ"
-    microposts: "Microposts"
-    log_in: "Đăng nhập"
-    sample_app: "ứng dụng mẫu"
-  
   static_pages:
     home:
       title: "Trang chủ"
@@ -39,19 +27,5 @@ vi:
       phone: "+84 906 000 000"
       hello_name: "Xin chào %{name}!"
       contact_info: "Thông tin liên hệ"
-
-  microposts:
-    title: "Microposts"
-    all_microposts: "Tất cả Microposts"
-    total_count: "Tổng số microposts: %{count}"
-    no_microposts: "Chưa có microposts nào."
-    posted_ago: "Đã đăng %{time} trước"
-    navigation_title: "Điều hướng"
-
-  app_information: "Thông tin ứng dụng"
-  app_label: "Ứng dụng:"
-  quick_links: "Liên kết nhanh"
-  
-  locales:
-    vi: "Tiếng Việt"
-    en: "Tiếng Anh"
+      app_information: "Thông tin ứng dụng"
+      app_label: "Ứng dụng:" 

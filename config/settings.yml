@@ -1,0 +1,35 @@
+app:
+  name: "Rails Tutorial Sample App"
+  version: "1.0.0"
+  description: "A sample Ruby on Rails tutorial application"
+  author: "Rails Tutorial"
+  default_user_name: "User"
+  
+i18n:
+  default_locale: "vi"
+  available_locales: ["vi", "en"]
+  fallback_locale: "vi"
+  
+email:
+  from: "noreply@example.com"
+  support: "support@example.com"
+  
+ui:
+  theme: "default"
+  items_per_page: 10
+  max_upload_size: 5242880  # 5MB
+  
+features:
+  registration: true
+  email_verification: false
+  social_login: false
+  
+external_services:
+  google_analytics: ""
+  facebook_app_id: ""
+  twitter_api_key: ""
+
+links:
+  help: "https://www.railstutorial.org/help"
+  book: "https://www.railstutorial.org/book"
+  railstutorial: "http://www.railstutorial.org/"

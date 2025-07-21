@@ -1,33 +1,57 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
   hello: "Hello world"
+
+  base_title: "Ruby on Rails Tutorial Sample App"
+  
+  navigation:
+    home: "Home"
+    help: "Help"
+    contact: "Contact"
+    microposts: "Microposts"
+    log_in: "Log in"
+    sample_app: "sample app"
+  
+  static_pages:
+    home:
+      title: "Home"
+      welcome: "Welcome to the Sample App"
+      description: "This is the home page for the %{link} sample application."
+      link_text: "Ruby on Rails Tutorial"
+      sign_up: "Sign up now!"
+      version_label: "Version"
+    help:
+      title: "Help"
+      heading: "Help"
+      description: "Get help on the Ruby on Rails Tutorial at the %{help_link}. To get help on this sample app, see the %{book_link}."
+      help_link_text: "Rails Tutorial help section"
+      book_link_text: "Ruby on Rails Tutorial"
+      book_emphasis: "book"
+      contact_heading: "Contact support"
+      email_label: "Contact email:"
+    contact:
+      title: "Contact"
+      heading: "Contact"
+      description: "Contact us through the information below or send us an email directly."
+      email_label: "Contact email:"
+      address_label: "Address:"
+      phone_label: "Phone:"
+      address: "132 Le Thanh Nghi, Hanoi, Vietnam"
+      phone: "+84 906 000 000"
+      hello_name: "Hello %{name}!"
+      contact_info: "Contact information"
+  
+  microposts:
+    title: "Microposts"
+    all_microposts: "All Microposts"
+    total_count: "Total microposts: %{count}"
+    no_microposts: "No microposts yet."
+    posted_ago: "Posted %{time} ago"
+    navigation_title: "Navigation"
+
+  app_information: "App Information"
+  app_label: "App:"
+  quick_links: "Quick Links"
+  
+  locales:
+    vi: "Tiếng Việt"
+    en: "Tiếng Anh"

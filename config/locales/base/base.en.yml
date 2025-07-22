@@ -11,5 +11,5 @@ en:
   app_label: "App:"
   quick_links: "Quick Links"
   locales:
-    vi: "Tiếng Việt"
-    en: "Tiếng Anh" 
+    vi: "Vietnamese"
+    en: "English"

@@ -1,16 +1,4 @@
 en:
-  hello: "Hello world"
-
-  base_title: "Ruby on Rails Tutorial Sample App"
-  
-  navigation:
-    home: "Home"
-    help: "Help"
-    contact: "Contact"
-    microposts: "Microposts"
-    log_in: "Log in"
-    sample_app: "sample app"
-  
   static_pages:
     home:
       title: "Home"
@@ -39,19 +27,5 @@ en:
       phone: "+84 906 000 000"
       hello_name: "Hello %{name}!"
       contact_info: "Contact information"
-  
-  microposts:
-    title: "Microposts"
-    all_microposts: "All Microposts"
-    total_count: "Total microposts: %{count}"
-    no_microposts: "No microposts yet."
-    posted_ago: "Posted %{time} ago"
-    navigation_title: "Navigation"
-
-  app_information: "App Information"
-  app_label: "App:"
-  quick_links: "Quick Links"
-  
-  locales:
-    vi: "Tiếng Việt"
-    en: "Tiếng Anh"
+      app_information: "App Information"
+      app_label: "App:" 

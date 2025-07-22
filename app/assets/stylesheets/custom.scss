@@ -36,7 +36,8 @@ textarea {
     border-top-color: #fff;
   }
 
-  &:hover .language-menu {
+  &:hover .language-menu,
+  &:focus-within .language-menu {
     display: block;
   }
 }
@@ -44,7 +45,7 @@ textarea {
 .language-toggle {
   color: #9d9d9d;
   display: block;
-  padding: 30px 40px;
+  padding: 12px 24px;
   text-decoration: none;
 
   &:hover {

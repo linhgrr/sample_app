@@ -1,4 +1,8 @@
 class ApplicationController < ActionController::Base
+  protect_from_forgery with: :exception
+
+  include SessionsHelper
+
   before_action :set_locale
 
   private
@@ -12,5 +16,9 @@ class ApplicationController < ActionController::Base
                     session[:locale] || I18n.default_locale
                   end
     session[:locale] = I18n.locale
+  end
+
+  def default_url_options
+    {locale: I18n.locale}
   end
 end

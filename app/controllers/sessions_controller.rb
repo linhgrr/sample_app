@@ -1,6 +1,8 @@
 class SessionsController < ApplicationController
   before_action :validate_session_params, only: :create
 
+  REMEMBER_ME = "1".freeze
+
   # GET /login
   def new; end
 
@@ -8,7 +10,7 @@ class SessionsController < ApplicationController
   def create
     user = find_user_by_email
 
-    if user&.authenticate(session_password)
+    if user.try(:authenticate, session_password)
       handle_successful_login(user)
     else
       handle_failed_login
@@ -48,6 +50,12 @@ class SessionsController < ApplicationController
   def handle_successful_login user
     reset_session
     log_in(user)
+    if params.dig(:session,
+                  :remember_me) == REMEMBER_ME
+      remember(user)
+    else
+      create_session(user)
+    end
     flash[:success] = t(".login_success")
     redirect_to user_path(user), status: :see_other
   end

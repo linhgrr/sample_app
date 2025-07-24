@@ -6,7 +6,7 @@ module UsersHelper
   end
 
   def gender_options
-    User::GENDERS.map do |gender|
+    User.genders.keys.map do |gender|
       [t("activerecord.attributes.user.genders.#{gender}"), gender]
     end
   end

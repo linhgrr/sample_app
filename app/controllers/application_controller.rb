@@ -1,4 +1,5 @@
 class ApplicationController < ActionController::Base
+  include Pagy::Backend
   protect_from_forgery with: :exception
 
   include SessionsHelper
@@ -20,5 +21,27 @@ class ApplicationController < ActionController::Base
 
   def default_url_options
     {locale: I18n.locale}
+  end
+
+  def logged_in_user
+    return if logged_in?
+
+    flash[:danger] = t("shared.login_required")
+    store_location
+    redirect_to login_url
+  end
+
+  def admin_user
+    return if current_user&.admin?
+
+    flash[:danger] = t("shared.admin_required")
+    redirect_to root_path
+  end
+
+  def correct_user
+    return if current_user?(@user)
+
+    flash[:danger] = t("shared.not_authorized")
+    redirect_to root_path
   end
 end

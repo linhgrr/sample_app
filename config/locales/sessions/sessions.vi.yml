@@ -12,6 +12,7 @@ vi:
     create:
       login_success: "Chào mừng bạn trở lại!"
       login_failed: "Email/mật khẩu không đúng"
+      account_not_activated: "Tài khoản chưa được kích hoạt. Vui lòng kiểm tra email để lấy liên kết kích hoạt."
       missing_credentials: "Vui lòng nhập cả email và mật khẩu"
       system_error: "Có lỗi xảy ra. Vui lòng thử lại sau"
     destroy:

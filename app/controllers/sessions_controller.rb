@@ -1,5 +1,8 @@
 class SessionsController < ApplicationController
   before_action :validate_session_params, only: :create
+  before_action :load_user, only: :create
+  before_action :check_authentication, only: :create
+  before_action :check_activation, only: :create
 
   REMEMBER_ME = "1".freeze
 
@@ -8,13 +11,7 @@ class SessionsController < ApplicationController
 
   # POST /login
   def create
-    user = find_user_by_email
-
-    if user.try(:authenticate, session_password)
-      handle_successful_login(user)
-    else
-      handle_failed_login
-    end
+    handle_successful_login(@user)
   end
 
   # DELETE /logout
@@ -36,11 +33,24 @@ class SessionsController < ApplicationController
     render :new, status: :unprocessable_entity
   end
 
-  def find_user_by_email
+  def load_user
     email = params.dig(:session, :email)&.downcase&.strip
-    return nil if email.blank?
+    return handle_failed_login if email.blank?
 
-    User.find_by(email:)
+    @user = User.find_by(email: email)
+    return handle_failed_login unless @user
+  end
+
+  def check_authentication
+    return if @user&.authenticate(session_password)
+
+    handle_failed_login
+  end
+
+  def check_activation
+    return if @user.activated?
+
+    handle_unactivated_user
   end
 
   def session_password
@@ -64,5 +74,10 @@ class SessionsController < ApplicationController
   def handle_failed_login
     flash.now[:danger] = t(".login_failed")
     render :new, status: :unprocessable_entity
+  end
+
+  def handle_unactivated_user
+    flash[:warning] = t(".account_not_activated")
+    redirect_to root_url
   end
 end

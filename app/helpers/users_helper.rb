@@ -12,4 +12,12 @@ module UsersHelper
       [t("activerecord.attributes.user.genders.#{gender}"), gender]
     end
   end
+
+  def current_user_admin?
+    current_user&.admin?
+  end
+
+  def current_user? user
+    user == current_user
+  end
 end

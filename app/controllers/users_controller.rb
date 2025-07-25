@@ -25,6 +25,7 @@ class UsersController < ApplicationController
   def handle_successful_signup
     reset_session
     log_in(@user)
+    create_session(@user)
     set_success_flash_and_redirect
   end
 

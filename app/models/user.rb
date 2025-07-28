@@ -9,6 +9,9 @@ class User < ApplicationRecord
 gender).freeze
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+  scope :recent, -> {order(created_at: :desc)}
+  scope :sort_by_name, -> {order(:name)}
+
   validates :name, presence: true,
             length: {maximum: Settings.user.max_name_length}
   validates :email, presence: true,
@@ -18,6 +21,9 @@ gender).freeze
   validates :birthday, presence: true
   validates :gender, presence: true
   validate :birthday_within_valid_years
+  validates :password, presence: true,
+            length: {minimum: Settings.user.min_password_length},
+            allow_nil: true
 
   def self.digest string
     cost = if ActiveModel::SecurePassword.min_cost

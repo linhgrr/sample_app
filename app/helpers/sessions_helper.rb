@@ -20,9 +20,7 @@ module SessionsHelper
   end
 
   def log_out
-    if logged_in?
-      forget(current_user)
-    end
+    forget(current_user) if logged_in?
     reset_session
     @current_user = nil
   end
@@ -42,6 +40,23 @@ module SessionsHelper
   def create_session user
     user.create_session
     session[:session_token] = user.session_token
+  end
+
+  def current_user? user
+    user == current_user
+  end
+
+  def current_user_admin?
+    current_user&.admin?
+  end
+
+  def redirect_back_or default
+    redirect_to(session[:forwarding_url] || default)
+    session.delete(:forwarding_url)
+  end
+
+  def store_location
+    session[:forwarding_url] = request.original_url if request.get?
   end
 
   private

@@ -47,6 +47,7 @@ gem "bootstrap-sass", "3.4.1"
 gem "sassc-rails"
 
 gem "bcrypt", "~> 3.1.7"
+gem "pagy"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]
 # gem "image_processing", "~> 1.2"
@@ -61,6 +62,7 @@ end
 
 group :development do
   gem "annotate"
+  gem "faker", "2.21.0"
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
 

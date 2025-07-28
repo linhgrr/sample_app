@@ -5,6 +5,7 @@ en:
       heading: "Log in"
       email_label: "Email"
       password_label: "Password"
+      remember_me_label: "Remember me on this computer"
       submit_button: "Log in"
       new_user_text: "New user? "
       sign_up_link: "Sign up now!"

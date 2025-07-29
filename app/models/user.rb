@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  attr_accessor :remember_token, :session_token
+  attr_accessor :remember_token, :session_token, :activation_token
 
   has_secure_password
 
@@ -11,6 +11,9 @@ gender).freeze
 
   scope :recent, -> {order(created_at: :desc)}
   scope :sort_by_name, -> {order(:name)}
+
+  before_save :downcase_email
+  before_create :create_activation_digest
 
   validates :name, presence: true,
             length: {maximum: Settings.user.max_name_length}
@@ -48,10 +51,22 @@ gender).freeze
     update_column :remember_digest, User.digest(session_token)
   end
 
-  def authenticated? token
-    return false if remember_digest.nil?
+  # Returns true if the given token matches the digest.
+  def authenticated? attribute, token
+    digest = send("#{attribute}_digest")
+    return false unless digest
 
-    BCrypt::Password.new(remember_digest).is_password? token
+    BCrypt::Password.new(digest).is_password?(token)
+  end
+
+  # Activates an account.
+  def activate
+    update_columns(activated: true, activated_at: Time.zone.now)
+  end
+
+  # Sends activation email.
+  def send_activation_email
+    UserMailer.account_activation(self).deliver_now
   end
 
   class << self
@@ -70,5 +85,14 @@ gender).freeze
     return if birthday.between?(min_date, Time.zone.today)
 
     errors.add(:birthday, :birthday_invalid, years:)
+  end
+
+  def downcase_email
+    email.downcase!
+  end
+
+  def create_activation_digest
+    self.activation_token = User.new_token
+    self.activation_digest = User.digest(activation_token)
   end
 end

@@ -55,19 +55,13 @@ class UsersController < ApplicationController
   private
 
   def handle_successful_signup
-    reset_session
-    log_in(@user)
-    create_session(@user)
-    set_success_flash_and_redirect
+    @user.send_activation_email
+    flash[:info] = t(".activation_email_sent")
+    redirect_to root_url, status: :see_other
   end
 
   def handle_failed_signup
     render :new, status: :unprocessable_entity
-  end
-
-  def set_success_flash_and_redirect
-    flash[:success] = t(".signup_success")
-    redirect_to user_path(@user), status: :see_other
   end
 
   def user_params

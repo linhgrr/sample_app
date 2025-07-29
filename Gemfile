@@ -49,6 +49,9 @@ gem "sassc-rails"
 gem "bcrypt", "~> 3.1.7"
 gem "pagy"
 
+# Figaro for environment variables management
+gem "figaro"
+
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]
 # gem "image_processing", "~> 1.2"
 

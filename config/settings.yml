@@ -4,6 +4,10 @@ app:
   description: "A sample Ruby on Rails tutorial application"
   author: "Rails Tutorial"
   default_user_name: "User"
+
+mailer:
+  default_from: "noreply@example.com"
+
 user:
   max_name_length: 50
   max_email_length: 255

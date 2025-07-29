@@ -12,6 +12,7 @@ en:
     create:
       login_success: "Welcome back!"
       login_failed: "Invalid email/password combination"
+      account_not_activated: "Account not activated. Check your email for the activation link."
       missing_credentials: "Please enter both email and password"
       system_error: "An error occurred. Please try again later"
     destroy:

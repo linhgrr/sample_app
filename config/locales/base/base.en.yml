@@ -7,6 +7,11 @@ en:
     microposts: "Microposts"
     log_in: "Log in"
     sample_app: "sample app"
+  shared:
+    delete: "delete"
+    confirm_delete: "You sure?"
+    login_required: "Please log in."
+    micropost_invalid: "Micropost invalid"
   app_information: "App Information"
   app_label: "App:"
   quick_links: "Quick Links"

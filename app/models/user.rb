@@ -2,6 +2,7 @@ class User < ApplicationRecord
   attr_accessor :remember_token, :session_token, :activation_token, :reset_token
 
   has_secure_password
+  has_many :microposts, dependent: :destroy
 
   enum gender: {female: 0, male: 1, other: 2}
 
@@ -91,6 +92,10 @@ gender).freeze
   # Checks expiration of reset token.
   def password_reset_expired?
     reset_sent_at < PASSWORD_RESET_EXPIRATION.ago
+  end
+
+  def feed
+    microposts.newest
   end
 
   class << self

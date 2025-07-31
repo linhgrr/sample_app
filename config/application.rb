@@ -18,9 +18,11 @@ module RailsTutorial
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
-    
+
     config.i18n.default_locale = Settings.i18n.default_locale.to_sym
     config.i18n.available_locales = Settings.i18n.available_locales.map(&:to_sym)
     config.i18n.fallbacks = [Settings.i18n.fallback_locale.to_sym]
+    config.load_defaults 7.0
+    config.active_storage.variant_processor = :mini_magick
   end
 end

@@ -1,4 +1,6 @@
 module UsersHelper
+  GRAVATAR_USER_INFO_SIZE = 50
+
   # Returns the Gravatar for the given user.
   def gravatar_for user, options = {size: Settings.ui.gravatar.default_size}
     gravatar_id = Digest::MD5.hexdigest(user.email.downcase)

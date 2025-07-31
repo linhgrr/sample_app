@@ -5,4 +5,13 @@ en:
     total_count: "Total microposts: %{count}"
     no_microposts: "No microposts yet."
     posted_ago: "Posted %{time} ago"
-    navigation_title: "Navigation" 
+    navigation_title: "Navigation"
+    create:
+      micropost_created: "Micropost created!"
+      micropost_failed: "Failed to create micropost!"
+    destroy:
+      micropost_deleted: "Micropost deleted!"
+      micropost_delete_failed: "Failed to delete micropost!"
+    image_upload:
+      file_too_large: "Maximum file size is 5MB. Please choose a smaller file."
+      invalid_file_type: "Please select a valid image file (JPEG, GIF, or PNG)."

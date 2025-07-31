@@ -14,6 +14,10 @@ user:
   birthday_valid_years: 100
   min_password_length: 6
 
+digit_140: 140
+page_10: 10
+digit_50: 50
+
 session:
   login_attempts_limit: 10
   lockout_duration: 900
@@ -35,6 +39,13 @@ ui:
   gravatar:
     default_size: 80
     list_size: 50
+
+image:
+  max_size_mb: 5
+  allowed_types: ["image/jpeg", "image/gif", "image/png"]
+  display:
+    width: 500
+    height: 500
 
 features:
   registration: true

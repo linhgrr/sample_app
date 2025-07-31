@@ -53,7 +53,8 @@ gem "pagy"
 gem "figaro"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html]
-# gem "image_processing", "~> 1.2"
+gem "active_storage_validations", "0.9.8"
+gem "image_processing", "1.12.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html
@@ -84,6 +85,7 @@ group :test do
 end
 
 # support i18n
+gem "i18n-js", "~> 4.0"
 gem "rails-i18n", "~> 7.0"
 
 gem "config"

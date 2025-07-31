@@ -7,6 +7,11 @@ vi:
     microposts: "Microposts"
     log_in: "Đăng nhập"
     sample_app: "ứng dụng mẫu"
+  shared:
+    delete: "xóa"
+    confirm_delete: "Bạn có chắc chắn?"
+    login_required: "Vui lòng đăng nhập."
+    micropost_invalid: "Micropost không hợp lệ"
   app_information: "Thông tin ứng dụng"
   app_label: "Ứng dụng:"
   quick_links: "Liên kết nhanh"

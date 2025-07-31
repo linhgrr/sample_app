@@ -5,4 +5,13 @@ vi:
     total_count: "Tổng số microposts: %{count}"
     no_microposts: "Chưa có microposts nào."
     posted_ago: "Đã đăng %{time} trước"
-    navigation_title: "Điều hướng" 
+    navigation_title: "Điều hướng"
+    create:
+      micropost_created: "Đã tạo micropost thành công!"
+      micropost_failed: "Không thể tạo micropost!"
+    destroy:
+      micropost_deleted: "Đã xóa micropost thành công!"
+      micropost_delete_failed: "Không thể xóa micropost!"
+    image_upload:
+      file_too_large: "Kích thước file tối đa là 5MB. Vui lòng chọn file nhỏ hơn."
+      invalid_file_type: "Vui lòng chọn file hình ảnh hợp lệ (JPEG, GIF, hoặc PNG)."

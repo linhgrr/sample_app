@@ -8,6 +8,14 @@
 
     <%= stylesheet_link_tag "application", media: "all", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <script type="text/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        if (typeof window.setupI18n === 'function') {
+          window.setupI18n(<%= i18n_js_data.to_json.html_safe %>.translations, '<%= I18n.locale %>');
+        }
+      });
+    </script>
   </head>
 
   <body>

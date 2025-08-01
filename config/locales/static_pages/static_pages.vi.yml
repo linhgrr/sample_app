@@ -7,6 +7,7 @@ vi:
       link_text: "Ruby on Rails Tutorial"
       sign_up: "Đăng ký ngay!"
       version_label: "Phiên bản"
+      micropost_feed: "Bảng tin Micropost"
     help:
       title: "Trợ giúp"
       heading: "Trợ giúp"
@@ -28,4 +29,4 @@ vi:
       hello_name: "Xin chào %{name}!"
       contact_info: "Thông tin liên hệ"
       app_information: "Thông tin ứng dụng"
-      app_label: "Ứng dụng:" 
+      app_label: "Ứng dụng:"

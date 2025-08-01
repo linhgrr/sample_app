@@ -2,6 +2,7 @@ en:
   activerecord:
     models:
       user: "User"
+      micropost: "Micropost"
     attributes:
       user:
         name: "Name"
@@ -14,6 +15,9 @@ en:
           female: "Female"
           male: "Male"
           other: "Other"
+      micropost:
+        content: "Content"
+        image: "Image"
     errors:
       models:
         user:
@@ -32,6 +36,11 @@ en:
             gender:
               blank: "can't be blank"
               inclusion: "is not included in the list"
+        micropost:
+          attributes:
+            image:
+              invalid_image_format: "must be a valid image format"
+              image_too_large: "should be less than 5MB"
   error_messages:
     the_form_contains: "The form contains"
     error:

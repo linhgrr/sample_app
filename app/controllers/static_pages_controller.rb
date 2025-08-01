@@ -2,9 +2,10 @@ class StaticPagesController < ApplicationController
   # GET / (root)
   # GET /static_pages/home
   def home
-    @app_name = Settings.app.name
-    @app_version = Settings.app.version
-    @registration_enabled = Settings.features.registration
+    return unless logged_in?
+
+    @micropost = current_user.microposts.build
+    @pagy, @feed_items = pagy current_user.feed, items: Settings.page_10
   end
 
   # GET /static_pages/help

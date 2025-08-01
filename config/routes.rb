@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     get "static_pages/contact"
     get "microposts/index"
 
-    resources :microposts, only: [:index]
+    resources :microposts, only: %i(create destroy)
 
     root "static_pages#home"
 

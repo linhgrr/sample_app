@@ -1,0 +1,4 @@
+translations:
+  - file: public/assets/i18n.js
+    patterns:
+      - "*"

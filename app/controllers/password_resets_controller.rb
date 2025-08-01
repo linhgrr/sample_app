@@ -44,6 +44,7 @@ class PasswordResetsController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(User::PASSWORD_RESET_ATTRIBUTES).merge(reset_digest: nil)
+    params.require(:user).permit(User::PASSWORD_RESET_ATTRIBUTES)
+          .merge(reset_digest: nil)
   end
 end

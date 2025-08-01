@@ -4,3 +4,12 @@ vi:
     admin_required: "Chỉ quản trị viên mới có quyền thực hiện hành động này."
     not_authorized: "Bạn không có quyền thực hiện hành động này."
     user_not_found: "Người dùng không tồn tại."
+    user_info:
+      view_profile: "xem hồ sơ của tôi"
+      micropost_count:
+        zero: "0 micropost"
+        one: "1 micropost"
+        other: "%{count} microposts"
+    micropost_form:
+      compose_placeholder: "Soạn micropost mới..."
+      post_button: "Đăng"

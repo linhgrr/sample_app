@@ -10,7 +10,10 @@ class UsersController < ApplicationController
   end
 
   # GET /users/:id
-  def show; end
+  def show
+    @pagy, @microposts = pagy @user.microposts.order(created_at: :desc),
+                              items: Settings.page_10
+  end
 
   # GET /users/:id/edit
   def edit; end

@@ -2,6 +2,7 @@ vi:
   activerecord:
     models:
       user: "Người dùng"
+      micropost: "Micropost"
     attributes:
       user:
         name: "Tên"
@@ -14,6 +15,9 @@ vi:
           female: "Nữ"
           male: "Nam"
           other: "Khác"
+      micropost:
+        content: "Nội dung"
+        image: "Hình ảnh"
     errors:
       models:
         user:
@@ -32,6 +36,11 @@ vi:
             gender:
               blank: "không thể để trống"
               inclusion: "không có trong danh sách"
+        micropost:
+          attributes:
+            image:
+              invalid_image_format: "phải là định dạng hình ảnh hợp lệ"
+              image_too_large: "phải nhỏ hơn 5MB"
   error_messages:
     the_form_contains: "Form chứa"
     error:

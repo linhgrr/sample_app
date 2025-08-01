@@ -39,6 +39,7 @@ ui:
   gravatar:
     default_size: 80
     list_size: 50
+    avatar_size: 30
 
 image:
   max_size_mb: 5

@@ -43,6 +43,14 @@ vi:
     destroy:
       user_deleted: "Người dùng đã được xóa"
       delete_failed: "Xóa thất bại!"
+    following:
+      following: "Đang theo dõi"
+    followers:
+      followers: "Người theo dõi"
+    follow:
+      follow: "Theo dõi"
+    unfollow:
+      unfollow: "Bỏ theo dõi"
     user:
       delete: "xóa"
       confirm_delete: "Bạn có chắc chắn?"

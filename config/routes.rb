@@ -19,6 +19,12 @@ Rails.application.routes.draw do
     resources :users
     resources :account_activations, only: :edit
     resources :password_resets, only: %i(new create edit update)
+    resources :users do
+      member do
+        get :following, :followers
+      end
+    end
+    resources :relationships, only: %i(create destroy)
   end
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

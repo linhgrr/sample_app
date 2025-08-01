@@ -1,6 +1,8 @@
 class UsersController < ApplicationController
-  before_action :logged_in_user, only: %i(index edit update destroy)
-  before_action :load_user_by_id, only: %i(show edit update destroy)
+  before_action :logged_in_user,
+                only: %i(index edit update destroy following followers)
+  before_action :load_user_by_id,
+                only: %i(show edit update destroy following followers)
   before_action :correct_user, only: %i(edit update)
   before_action :admin_user, only: :destroy
 
@@ -11,7 +13,7 @@ class UsersController < ApplicationController
 
   # GET /users/:id
   def show
-    @pagy, @microposts = pagy @user.microposts.order(created_at: :desc),
+    @pagy, @microposts = pagy @user.microposts.newest,
                               items: Settings.page_10
   end
 
@@ -53,6 +55,20 @@ class UsersController < ApplicationController
       flash[:danger] = t(".delete_failed")
     end
     redirect_to users_path
+  end
+
+  # GET /users/:id/following
+  def following
+    @title = t(".following")
+    @pagy, @users = pagy @user.following, items: Settings.page_10
+    render :show_follow
+  end
+
+  # GET /users/:id/followers
+  def followers
+    @title = t(".followers")
+    @pagy, @users = pagy @user.followers, items: Settings.page_10
+    render :show_follow
   end
 
   private

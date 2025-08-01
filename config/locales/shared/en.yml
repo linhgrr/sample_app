@@ -4,6 +4,7 @@ en:
     admin_required: "Only administrators can perform this action."
     not_authorized: "You are not authorized to perform this action."
     user_not_found: "User not found."
+    relationship_not_found: "Relationship not found."
     user_info:
       view_profile: "view my profile"
       micropost_count:

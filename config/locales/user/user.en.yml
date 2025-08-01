@@ -43,6 +43,14 @@ en:
     destroy:
       user_deleted: "User deleted"
       delete_failed: "Delete fail!"
+    following:
+      following: "Following"
+    followers:
+      followers: "Followers"
+    follow:
+      follow: "Follow"
+    unfollow:
+      unfollow: "Unfollow"
     user:
       delete: "delete"
       confirm_delete: "You sure?"
